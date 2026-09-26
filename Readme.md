@@ -46,18 +46,19 @@ The application focuses on retrieving information from a patient's historical re
 ### Runtime RAG Flow
 
 ```mermaid
-flowchart LR
+flowchart TD
     A[User] --> B[Streamlit UI]
     B --> C[FastAPI]
-    C --> D[Query Embedding]
+    C --> D[Generate Query Embedding]
     D --> E[(PostgreSQL + pgvector)]
-    E --> F[Patient Clinical Records]
+    E --> F[Retrieve Patient Clinical Records]
     F --> G[Presidio PII Redaction]
     G --> H{NeMo Guardrails}
     H -->|Historical Query| I[OpenRouter LLM]
     H -->|Medical Advice| J[Request Blocked]
-    I --> B
-    J --> B
+    I --> K[Response]
+    J --> K
+    K --> B
 ```
 
 ### Data & Embedding Pipeline
