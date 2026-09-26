@@ -390,6 +390,8 @@ DB_PORT=5432
 DB_NAME=clinical_db
 
 OPENROUTER_API_KEY=your_openrouter_api_key
+OPENROUTER_BASE_URL=https://api.openrouter.ai/v1
+OPENROUTER_API_BASE=https://api.openrouter.ai/v1
 ```
 
 The application uses the database variables for PostgreSQL connectivity and `OPENROUTER_API_KEY` for the LLM configuration.
